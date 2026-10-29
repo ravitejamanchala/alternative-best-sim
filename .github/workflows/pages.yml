@@ -2,7 +2,7 @@ name: Publish SlayDrive World to GitHub Pages
 
 on:
   push:
-    branches: ['development/world']
+    branches: ['feature/slaydrive-world']
   workflow_dispatch:
 
 permissions:
