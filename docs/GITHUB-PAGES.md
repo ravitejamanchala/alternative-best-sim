@@ -1,8 +1,8 @@
 # GitHub Pages deployment
 
-The user requested GitHub Pages on 29 October 2026. The target is the separate `ravitejamanchala/slaydrive-world` repository, publishing source from `development/world`. Existing learner/admin deployments and DNS remain unchanged.
+The user requested GitHub Pages on 29 October 2026. The target is the separate `ravitejamanchala/alternative-best-sim` repository, publishing source from `development/world`. Existing learner/admin deployments and DNS remain unchanged.
 
-The configured project path is `/slaydrive-world/`. `.github/workflows/pages.yml` builds on pushes to `development/world` or a manual workflow dispatch, runs the automated tests and a real Chromium check under that path, uploads only `dist`, and deploys through the official Pages artifact workflow. Deployment uses the `github-pages` environment and reports GitHub's actual URL. The browser check verifies static assets/worker, Cambridge regeneration, actual driving and complete JSON export.
+The configured project path is `/alternative-best-sim/`. `.github/workflows/pages.yml` builds on pushes to `development/world` or a manual workflow dispatch, runs the automated tests and a real Chromium check under that path, uploads only `dist`, and deploys through the official Pages artifact workflow. Deployment uses the `github-pages` environment and reports GitHub's actual URL. The browser check verifies static assets/worker, Cambridge regeneration, actual driving and complete JSON export.
 
 Local validation:
 

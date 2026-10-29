@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
-const target = new URL(process.env.STUDIO_URL || 'http://127.0.0.1:4173/slaydrive-world/');
-assert.ok(target.pathname.endsWith('/slaydrive-world/'), 'Exercise the real repository path');
+const target = new URL(process.env.STUDIO_URL || 'http://127.0.0.1:4173/alternative-best-sim/');
+assert.ok(target.pathname.endsWith('/alternative-best-sim/'), 'Exercise the real repository path');
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium',
   args: [

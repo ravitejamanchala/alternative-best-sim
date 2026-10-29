@@ -20,9 +20,9 @@
     "smoke": "node --import tsx scripts/smoke.ts",
     "learner:preview": "node --import tsx scripts/learner-preview.ts",
     "test:learner": "node --import tsx tests/learner-browser.ts",
-    "build:pages": "npm run build -- --base=/slaydrive-world/",
+    "build:pages": "npm run build -- --base=/alternative-best-sim/",
     "test:pages": "node --import tsx tests/pages-browser.ts",
-    "preview:pages": "vite preview --host 127.0.0.1 --port 4173 --base=/slaydrive-world/"
+    "preview:pages": "vite preview --host 127.0.0.1 --port 4173 --base=/alternative-best-sim/"
   },
   "dependencies": {
     "@clerk/backend": "3.23.2",
