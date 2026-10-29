@@ -81,6 +81,7 @@ const icons: Record<Kind, any> = {
   spawn: Navigation,
 };
 const sampleBounds: Bounds = [52.2023, 0.116, 52.2065, 0.123];
+const sampleURL = import.meta.env.BASE_URL + 'samples/cambridge.osm.json';
 const pretty = (kind: string) =>
   ({
     road: 'Road network',
@@ -187,10 +188,7 @@ export default function App() {
   }, []);
   useEffect(() => {
     let active = true;
-    Promise.all([
-      fetch('/samples/cambridge.osm.json').then((r) => r.json()),
-      latest().catch(() => null),
-    ])
+    Promise.all([fetch(sampleURL).then((r) => r.json()), latest().catch(() => null)])
       .then(([data, draft]) => {
         if (active) accept(draft || fromOSM(data));
       })
@@ -294,9 +292,7 @@ export default function App() {
     setRetry(() => () => generate(sample));
     try {
       const data = sample
-        ? await fetch('/samples/cambridge.osm.json', { signal: controller.signal }).then((r) =>
-            r.json(),
-          )
+        ? await fetch(sampleURL, { signal: controller.signal }).then((r) => r.json())
         : await provider.current.osm(bounds, controller.signal);
       if (controller.signal.aborted) return;
       setProgress(40);

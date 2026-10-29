@@ -2,6 +2,8 @@
 
 No deployment has been executed. Source can be reviewed and tested locally before any remote operation.
 
+The user's latest hosting choice is **GitHub Pages**. Follow [GitHub Pages deployment](GITHUB-PAGES.md) for the static frontend. The Cloudflare frontend option below is an alternative; the separate Worker remains relevant for optional online features.
+
 1. Apply the desired network configuration in cloud environment settings (`api.github.com`, `manchala.co.uk`, `nominatim.openstreetmap.org`, `overpass-api.de`) and publish the updated environment when the product requests publication. The draft currently requests unrestricted access; the running policy remains restricted. Enabling the required domains enables access; it does not deploy this application. The current instance still enforces the prior policy.
 2. Retry repository discovery through native Git and the GitHub API. If `ravitejamanchala/slaydrive-world` exists, fetch/inspect its refs before integrating anything. Otherwise create a **private** separate repository. Push only `development/world`. The user explicitly authorized repository creation and development-branch pushes. Never force-push or push into an existing learner/admin repo.
 3. Use a new Cloudflare Pages project such as `slaydrive-world-preview`, with build command `npm ci && npm run build` and output `dist`. Create a development branch preview. Do not reuse `learner-drive-app`, the admin project, custom domains or DNS records. Require deployment credentials for this new project; keep them out of Vite variables and logs.

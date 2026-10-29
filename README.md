@@ -60,6 +60,8 @@ Cloud saves use expected-head comparisons. Concurrent edits return 409 instead o
 
 See [architecture](docs/ARCHITECTURE.md), [source inspection](docs/REFERENCE-AUDIT.md), [preview deployment plan](docs/PREVIEW.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
+The requested GitHub Pages release is configured in `.github/workflows/pages.yml`. See [GitHub Pages deployment](docs/GITHUB-PAGES.md) for the repository-path build, validation and current publication blocker. `npm run build:pages` creates the static Pages artifact; live cloud features need a separate Worker.
+
 `public/samples/cambridge.osm.json` is the attributed OSM extract from the inspected admin repository. `npm run sample` deterministically writes `cambridge.world.json` and `cambridge.slaydrive.json`. The latter includes the exact native SlayDrive network plus the full World extension and compiled surfaces. Native `buildNet` compatibility and complete extension round trips are tested. The [local learner integration](docs/LEARNER-INTEGRATION.md) serves the existing UI through a read-only development overlay and adds World import/export with the shared renderer. Production does not automatically consume World scenes and remains unchanged.
 
 The compiler uses planar source topology and millimetre-quantized polygon offsets/unions. Geographic input is WGS84, world units are metres, X east / Y up / Z south. Elevation datum is explicitly **flat local zero, not surveyed**. Bridges, tunnels and nonzero road layers are withheld until a consistent elevation model exists. Widths and unknown building heights are estimates, labelled separately from source tags and manual overrides. The compiler never invents junction controls, crossings, yellow boxes or legal priorities.

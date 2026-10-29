@@ -4,6 +4,8 @@
 
 The separate repository is `/workspace/slaydrive-world`, branch `development/world`. GitHub existence/creation is unresolved because `api.github.com` is blocked by the current environment network policy. Native discovery of `slaydrive-world` returned Repository not found, which alone cannot distinguish absence from scoped access. No remote repository was overwritten or pushed. The existing admin and simulator checkouts remain clean.
 
+The subsequent GitHub Pages request is prepared in `.github/workflows/pages.yml`. The repository-path production build and four browser checks pass (assets/worker, regeneration, driving, export). The site is not deployed because GitHub API access remains blocked; see [GitHub Pages status](GITHUB-PAGES.md).
+
 ## Verified
 
 - 53 automated tests: geometry, topology, roundabout holes, tile-fragment seams, narrow islands, footprint holes/rotation, clearance, coordinates, routing and restriction handling, override persistence, import limits, original native decoder compatibility, full World-envelope round trips, batching/picking/disposal, opt-in learner bridge, API authorization and actual Postgres migration/store transactions using PGlite.

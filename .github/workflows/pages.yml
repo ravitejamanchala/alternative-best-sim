@@ -1,0 +1,57 @@
+name: Publish SlayDrive World to GitHub Pages
+
+on:
+  push:
+    branches: ['development/world']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Build for the repository Pages path
+        run: npm run build:pages
+      - run: npx playwright install --with-deps chromium
+      - name: Verify the published directory layout in Chromium
+        run: |
+          npm run preview:pages > /tmp/world-pages-preview.log 2>&1 &
+          export CHROMIUM_PATH="$(node --input-type=module -e 'import { chromium } from "playwright"; process.stdout.write(chromium.executablePath())')"
+          export STUDIO_URL=http://127.0.0.1:4173/slaydrive-world/
+          node --input-type=module -e 'for(let i=0;i<40;i++){try{if((await fetch(process.env.STUDIO_URL)).ok)process.exit(0);}catch{}await new Promise(r=>setTimeout(r,250));}process.exit(1)'
+          npm run test:pages
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the verified static artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

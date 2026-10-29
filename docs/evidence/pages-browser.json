@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": 4,
+  "path": "/slaydrive-world/",
+  "sampleRequests": 2,
+  "errors": [],
+  "failedResponses": [],
+  "misplacedRequests": [],
+  "checksCovered": [
+    "repository-path assets and worker",
+    "sample regeneration",
+    "lazy vehicle physics and driving",
+    "complete World export"
+  ]
+}
