@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/ravitejamanchala/cambridge-learner-driv",
+  "commit": "912e5e667c3ad991484c54d92cf056767a7f97d2",
+  "files": {
+    "markings.js": "8f1ded9fdcf11c294eb76a0acbac0e44e0df802efceedeb404b4dda6543d76d1",
+    "automatic.js": "b05360296bca6867d06dcb8eecb91efa2893e8ec50c996ffc589248601dac316",
+    "net.js": "4e348926f8bfec313986ff34ced86ae83cbb70865b0f1b9e99870aa35e0977c5",
+    "car.js": "9c6a08d1507e9000606c589aa756807c801bc6bd9afe929e776985651b3fa96e",
+    "config.js": "67ba1f076a34db8d9553f3194763e84815af4dbd5eb359ffa69d2ada6ea393c3",
+    "vehicle-state.js": "6d9f92158d2f92fb3b10db6b250e671c8616ae1688b1e3dfcbd1b315e9157be9"
+  }
+}

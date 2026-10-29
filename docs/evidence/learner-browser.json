@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": 3,
+  "upstream": "912e5e667c3ad991484c54d92cf056767a7f97d2",
+  "roundTrip": "export → actual learner UI import → export → browser reload → reimport → re-export",
+  "assessment": {
+    "seriousBefore": 0,
+    "seriousAfter": 1,
+    "passed": false,
+    "ungraded": false,
+    "netEdges": 64,
+    "area": "world:world-e2d1d9f7-c600-4532-bf59-59f846257c28"
+  },
+  "scope": "Local read-only development overlay; existing learner checkout unchanged",
+  "pageErrors": []
+}

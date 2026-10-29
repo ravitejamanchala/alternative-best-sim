@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-29T03:29:35.649Z",
+  "device": {
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logicalCpus": 5,
+    "totalRAMGiB": 33.3,
+    "node": "v24.19.0",
+    "rendering": "See browser-results.json; headless SwiftShader software renderer"
+  },
+  "sample": {
+    "bounds": [
+      52.2023,
+      0.116,
+      52.2065,
+      0.123
+    ],
+    "objects": 164,
+    "roadAreaM2": 5498.0383752788875
+  },
+  "generation": {
+    "coldMs": 110.76958100000002,
+    "warmMedianMs": 52.966684999999984,
+    "warmP95Ms": 66.22434799999996,
+    "samplesMs": [
+      110.76958100000002,
+      62.77459900000002,
+      52.966684999999984,
+      53.05033100000003,
+      51.061555999999996,
+      53.526535999999965,
+      52.59821099999999,
+      53.73873900000001,
+      66.22434799999996,
+      48.63774699999999,
+      50.28590099999997,
+      48.44739100000004
+    ]
+  },
+  "memory": {
+    "rss": 152121344,
+    "heapTotal": 86261760,
+    "heapUsed": 24280704,
+    "external": 3817722,
+    "arrayBuffers": 1355461
+  }
+}

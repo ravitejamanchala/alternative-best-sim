@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "parity": 0,
+  "stopped": {
+    "z": -12.849855542531321,
+    "speed": 0,
+    "contacts": 855
+  },
+  "reset": {
+    "x": 0,
+    "z": 0,
+    "speed": 0
+  },
+  "cancelled": true,
+  "nextJobObjects": 2
+}

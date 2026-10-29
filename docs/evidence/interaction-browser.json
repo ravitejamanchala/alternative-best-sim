@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": 5,
+  "routeNodes": [
+    "20921976",
+    "1613189263",
+    "1420453572",
+    "1613189237",
+    "1420453566",
+    "1420453563",
+    "3709074928",
+    "1698310421",
+    "1201353297"
+  ],
+  "checkpoint": {
+    "id": "manual/9313845d-235d-40b4-a558-644665f779ea",
+    "kind": "checkpoint",
+    "name": "Checkpoint",
+    "x": 39.8556147590393,
+    "y": 0,
+    "z": 103.04635164826674,
+    "rotation": 0,
+    "scale": 1,
+    "width": 2.4,
+    "height": 5,
+    "length": 5,
+    "source": {
+      "provider": "manual",
+      "id": "manual/9313845d-235d-40b4-a558-644665f779ea",
+      "confidence": "manual",
+      "tags": {},
+      "inferred": []
+    }
+  },
+  "authored": [
+    "lane dividers",
+    "lane control points",
+    "junction boundary",
+    "pavement gap"
+  ]
+}

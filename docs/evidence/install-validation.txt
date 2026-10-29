@@ -1,0 +1,107 @@
+
+added 164 packages in 6s
+
+> slaydrive-world@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.2.2 building client environment for production...
+transforming...
+✓ 1768 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                          0.57 kB │ gzip:   0.38 kB
+dist/assets/dm-sans-latin-600-normal-Aqo67rzb.woff2     14.14 kB
+dist/assets/manrope-latin-600-normal-4f0koTD-.woff2     14.17 kB
+dist/assets/dm-sans-latin-400-normal-CW0RaeGs.woff2     14.20 kB
+dist/assets/manrope-latin-700-normal-BZp_XxE4.woff2     14.21 kB
+dist/assets/dm-sans-latin-500-normal-B9HHJjqV.woff2     14.30 kB
+dist/assets/dm-sans-latin-600-normal-BmdmIIQ2.woff      18.32 kB
+dist/assets/dm-sans-latin-400-normal-BwCSEQnW.woff      18.36 kB
+dist/assets/manrope-latin-600-normal-BqgrALkZ.woff      18.38 kB
+dist/assets/manrope-latin-700-normal-DGRFkw-m.woff      18.41 kB
+dist/assets/dm-sans-latin-500-normal-Dr3UlScf.woff      18.52 kB
+dist/assets/worker-B7VqiQte.js                         204.00 kB
+dist/assets/index-DBy6v8Yl.css                          30.40 kB │ gzip:   7.42 kB
+dist/assets/car-CIYLdljO.js                              5.80 kB │ gzip:   2.60 kB │ map:    32.18 kB
+dist/assets/index-CjcH5aDy.js                        1,228.89 kB │ gzip: 338.75 kB │ map: 4,812.15 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.18s
+
+> slaydrive-world@0.1.0 build:adapter
+> vite build --config vite.library.ts
+
+vite v7.2.2 building client environment for production...
+transforming...
+✓ 98 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-adapter/slaydrive-world-adapter.js  341.49 kB │ gzip: 80.01 kB │ map: 1,147.32 kB
+✓ built in 1.07s
+
+> slaydrive-world@0.1.0 test
+> node --import tsx --test --test-isolation=none tests/*.test.ts
+
+✔ Complete JSON survives World → SlayDrive → native loader → World → re-export (33.193732ms)
+✔ Native reverse one-way is oriented for the actual learner loader (2.512319ms)
+✔ Cambridge offline source compiles and passes upstream native decoder (108.451505ms)
+✔ Legacy import retains every unsupported field instead of dropping it (1.519339ms)
+✔ Vendored vehicle physics is byte-for-byte the inspected simulator version (0.48034ms)
+✔ Free drive entry points do not import grading or profile services (0.284247ms)
+✔ GET /api/me rejects authenticated non-administrators (6.31896ms)
+✔ GET /api/worlds rejects authenticated non-administrators (1.540892ms)
+✔ POST /api/worlds rejects authenticated non-administrators (2.085199ms)
+✔ GET /api/worlds/11111111-1111-4111-8111-111111111111 rejects authenticated non-administrators (1.014733ms)
+✔ PUT /api/worlds/11111111-1111-4111-8111-111111111111 rejects authenticated non-administrators (0.942454ms)
+✔ GET /api/worlds/11111111-1111-4111-8111-111111111111/revisions rejects authenticated non-administrators (0.696044ms)
+✔ POST /api/worlds/11111111-1111-4111-8111-111111111111/publish rejects authenticated non-administrators (0.966851ms)
+✔ GET /api/maps/search?q=Cambridge rejects authenticated non-administrators (0.618648ms)
+✔ POST /api/maps/osm rejects authenticated non-administrators (0.628764ms)
+✔ GET /api/imagery?lat=52.2&lon=.12 rejects authenticated non-administrators (0.604697ms)
+✔ Missing, expired and cross-origin sessions fail closed (1.07307ms)
+✔ Administrator can save; stale head is a conflict, malformed world is rejected (3.81286ms)
+✔ Provider deduplication/cache and bounds checks prevent redundant/unbounded requests (2.13939ms)
+✔ Provider errors remain errors; no fabricated fallback data (1.007622ms)
+✔ Body size limit is enforced before authentication (0.79978ms)
+✔ Authored junctions join the road union and lane paint stays on shared asphalt through round trip (12.364522ms)
+✔ Explicit endpoint connection joins topology; nearby unconnected roads remain distinct beforehand (0.757306ms)
+✔ Explicit approach lines precede the conflict area on the incoming left side and reject outbound one-ways (4.340572ms)
+✔ Dash phase continues across vertices and automatic dividers avoid junction conflict areas (1.537958ms)
+✔ Actual Drizzle store transactions preserve CAS, complete JSON, authors and publication ownership (907.257974ms)
+✔ Migration enforces immutable history and publication, fresh users are not admins (604.661798ms)
+✔ T has continuous asphalt and no pavement overlap (3.765559ms)
+✔ crossroads has continuous asphalt and no pavement overlap (5.085721ms)
+✔ curve has continuous asphalt and no pavement overlap (3.488033ms)
+✔ seam has continuous asphalt and no pavement overlap (2.476255ms)
+✔ Roundabout preserves central island and approaches (8.939072ms)
+✔ Narrow traffic island remains between separate carriageways (2.583426ms)
+✔ Courtyard holes survive rotation and remain empty (0.141803ms)
+✔ Source-node edit moves all incident roads; undo restores topology (0.447261ms)
+✔ Mapped pavement gaps cut only pavement, not road (1.290936ms)
+✔ Roadside objects inside carriageway fail clearance (1.85308ms)
+✔ Coordinate convention is reversible to sub-millimetre precision (0.139409ms)
+✔ Manual edits and deletion survive regeneration (0.351297ms)
+✔ Disappearing edited sources are retained explicitly (0.711487ms)
+✔ Schema rejects corrupt, oversized and nonfinite documents (16.974787ms)
+✔ Oversized geographic request rejected before provider fetch (0.15982ms)
+✔ Small JSON cannot request an unbounded spatial geometry allocation (0.30662ms)
+✔ OSM relation joins members and assigns courtyard holes, shop only to solid footprint (0.674602ms)
+✔ Licensed Overture fills uncovered footprints and preserves holes and stable IDs (1.67898ms)
+✔ MultiPolygon parts preserve source identity, holes and metadata across repeat imports (1.076466ms)
+✔ Building material batching retains exact selection and disposes its geometry (15.754116ms)
+✔ Opt-in learner bridge round trips full world and leaves an existing assessment untouched (6.482055ms)
+✔ Routes respect one-way direction and connectivity (0.641192ms)
+✔ No-turn and only-turn restrictions are enforced across waypoints (0.385508ms)
+✔ Clockwise and anticlockwise loops have actual connected edges (0.398938ms)
+✔ Known unsupported restrictions fail closed, same start and end is not a practice route (0.179469ms)
+ℹ tests 52
+ℹ suites 0
+ℹ pass 52
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2926.343972

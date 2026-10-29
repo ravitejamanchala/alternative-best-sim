@@ -1,0 +1,15 @@
+
+> slaydrive-world@0.1.0 api:check
+> WRANGLER_SEND_METRICS=false WRANGLER_LOG_PATH=/tmp/slaydrive-world-wrangler.log wrangler deploy --dry-run --outdir /tmp/slaydrive-world-worker
+
+Proxy environment variables detected. We'll use your proxy for fetch requests.
+
+ ⛅️ wrangler 4.50.0
+───────────────────
+Total Upload: 1102.30 KiB / gzip: 209.77 KiB
+Your Worker has access to the following bindings:
+Binding                                         Resource
+env.RATE_LIMITER (30 requests/60s)              Rate Limit
+env.FRONTEND_URL ("http://localhost:5173")      Environment Variable
+
+--dry-run: exiting now.
